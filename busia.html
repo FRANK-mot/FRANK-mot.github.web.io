@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>County Government of Busia — Jobs & Feedback</title>
+  <meta name="description" content="Official Busia County jobs portal — find jobs, apply online and submit citizen feedback.">
+  <style>
+    /* Simple reset */
+    html,body,div,span,applet,object,iframe,
+    h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+    a,abbr,acronym,address,big,cite,code,
+    del,dfn,em,img,ins,kbd,q,s,samp,
+    small,strike,strong,sub,sup,tt,var,
+    b,u,i,center,dl,dt,dd,ol,ul,li,
+    fieldset,form,label,legend,table,caption,
+    tbody,tfoot,thead,tr,th,td{
+      margin:0;padding:0;border:0;vertical-align:baseline;
+    }
+    html { box-sizing: border-box; font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { line-height:1.4; background:#f4f6f8; color:#1f2933; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; padding-bottom:40px; }
+
+    :root{
+      --brand: #006633;
+      --muted: #6b7280;
+      --card-bg: #fff;
+      --radius: 8px;
+      --max-width: 1100px;
+    }
+
+    /* Utility */
+    .container { max-width: var(--max-width); margin: 20px auto; padding: 16px; }
+    .header { background: var(--brand); color: #fff; padding:22px 16px; border-radius: var(--radius); text-align:center; }
+    h1{font-size:1.35rem;line-height:1.1}
+    p.lead{color:var(--muted); margin-top:8px}
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -999px; top: auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { position: static; left: 8px; top: 8px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; border-radius:6px; z-index:1000; }
+
+    nav.primary { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+    nav.primary a { background:#fff; color:var(--brand); padding:8px 12px; border-radius:8px; text-decoration:none; border:1px solid #e6eef0; font-weight:600; }
+    nav.primary a:focus, nav.primary a:hover { box-shadow:0 2px 8px rgba(0,0,0,0.08); transform:translateY(-1px); }
+
+    main { margin-top:18px; }
+
+    /* Sections/cards */
+    section { margin-bottom:18px; }
+    .card { background: var(--card-bg); border-radius: var(--radius); padding:16px; box-shadow:0 1px 3px rgba(16,24,40,0.04); }
+    .grid { display:flex; gap:16px; flex-direction:column; }
+    @media(min-width:700px){ .grid{ flex-direction:row; } }
+
+    /* Jobs grid */
+    .jobs { display:grid; gap:12px; grid-template-columns: 1fr; margin-top:12px; }
+    @media(min-width:720px){ .jobs { grid-template-columns: repeat(2, 1fr); } }
+    .job-card { border-radius:10px; padding:14px; background:linear-gradient(180deg,#ffffff,#fbffff); border:1px solid #edf5f1; display:flex; flex-direction:column; gap:8px; min-height:150px; }
+    .job-card h3 { margin-bottom:4px; font-size:1.05rem; color:#073b18; }
+    .job-meta { color:var(--muted); font-size:0.95rem; }
+
+    /* Forms */
+    form { margin-top:12px; }
+    .form-row { margin-bottom:12px; }
+    label { display:block; margin-bottom:6px; font-weight:600; color:#0f1724; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea, input[type="file"] {
+      width:100%; padding:10px 12px; border-radius:8px; border:1px solid #d1d5db; font-size:1rem; background:#fff; color:#0f1724;
+    }
+    textarea { min-height:120px; resize:vertical; }
+    .hint { font-size:0.9rem; color:var(--muted); margin-top:6px; }
+
+    .btn { display:inline-block; background:var(--brand); color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; border:none; font-weight:700; cursor:pointer; }
+    .btn.secondary { background:#fff; color:var(--brand); border:1px solid #d1eadd; }
+    .btn:focus, .btn:active, input:focus, select:focus, textarea:focus { outline:3px solid rgba(0,102,51,0.15); outline-offset:2px; }
+
+    /* Footer */
+    footer { margin-top:20px; text-align:center; color:var(--muted); font-size:0.95rem; }
+
+    /* Accessibility helpers */
+    .visually-hidden { position:absolute !important; height:1px;width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; border:0; padding:0; margin:-1px; }
+
+    /* Small screens tweaks */
+    @media (max-width:420px){
+      h1{font-size:1.15rem}
+      .header{padding:16px}
+      .job-card{min-height:120px}
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: more){
+      .header{box-shadow: 0 0 0 3px rgba(0,0,0,0.08)}
+      .job-card{border:2px solid #000}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="container">
+    <header class="header" role="banner">
+      <h1>County Government of Busia — Jobs & Feedback</h1>
+      <p class="lead">Official portal to find jobs, apply online and give feedback (static demo)</p>
+
+      <nav class="primary" role="navigation" aria-label="Primary navigation">
+        <a href="#jobs">Jobs</a>
+        <a href="#apply">Apply</a>
+        <a href="#feedback">Feedback</a>
+      </nav>
+    </header>
+
+    <main id="main" role="main">
+      <!-- About -->
+      <section id="about" class="card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Busia County</h2>
+        <p class="hint" style="margin-top:8px;">
+          The County Government of Busia is committed to transparent recruitment and improved service delivery to its citizens.
+        </p>
+      </section>
+
+      <!-- Jobs -->
+      <section id="jobs" aria-labelledby="jobs-heading">
+        <h2 id="jobs-heading" style="margin-bottom:8px">Available Jobs</h2>
+        <div class="jobs">
+          <article class="job-card" aria-labelledby="job1-title">
+            <h3 id="job1-title">Administrative Officer</h3>
+            <p class="job-meta"><strong>Department:</strong> Public Administration</p>
+            <p class="job-meta"><strong>Deadline:</strong> <time datetime="2026-06-30">June 30, 2026</time></p>
+            <p class="hint" style="margin-top:auto"><a class="btn secondary" href="#apply" title="Apply for Administrative Officer">Apply Now</a></p>
+          </article>
+
+          <article class="job-card" aria-labelledby="job2-title">
+            <h3 id="job2-title">Public Health Officer</h3>
+            <p class="job-meta"><strong>Department:</strong> Health Services</p>
+            <p class="job-meta"><strong>Deadline:</strong> <time datetime="2026-06-30">June 30, 2026</time></p>
+            <p class="hint" style="margin-top:auto"><a class="btn secondary" href="#apply" title="Apply for Public Health Officer">Apply Now</a></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Apply -->
+      <section id="apply" class="card" aria-labelledby="apply-heading">
+        <h2 id="apply-heading">Job Application Form</h2>
+
+        <!-- NOTE: This form is static. To make submissions work, set form action to your server endpoint,
+             e.g. action="/apply" method="post" enctype="multipart/form-data" and implement server handling. -->
+        <form method="post" action="#" novalidate>
+          <div class="form-row">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="Jane Doe">
+          </div>
+
+          <div class="form-row">
+            <label for="nationalId">National ID / Passport</label>
+            <input id="nationalId" name="nationalId" type="text" inputmode="numeric" required placeholder="e.g., 12345678">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" required placeholder="+2547XXXXXXXX" pattern="^\+?\d{7,15}$" title="Include country code, e.g. +2547XXXXXXXX">
+            <div class="hint">Include country code, e.g. +2547XXXXXXXX (7–15 digits)</div>
+          </div>
+
+          <div class="form-row">
+            <label for="position">Position Applied For</label>
+            <select id="position" name="position" required>
+              <option value="">-- Select Position --</option>
+              <option>Administrative Officer</option>
+              <option>Public Health Officer</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="cv">Upload CV</label>
+            <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+            <div class="hint">Accepted: PDF or Word. Max file size should be enforced server-side (e.g., 5 MB).</div>
+          </div>
+
+          <div class="form-row">
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4" maxlength="2000" placeholder="Optional: any additional details you'd like the hiring team to know"></textarea>
+          </div>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+            <button class="btn" type="submit">Submit Application</button>
+            <a class="btn secondary" href="#jobs" role="button">Back to Jobs</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- Feedback -->
+      <section id="feedback" class="card" aria-labelledby="feedback-heading">
+        <h2 id="feedback-heading">Client / Citizen Feedback</h2>
+
+        <!-- NOTE: This form is static. Replace action="#" with your feedback endpoint to capture data -->
+        <form method="post" action="#" novalidate>
+          <div class="form-row">
+            <label for="fbName">Name (Optional)</label>
+            <input id="fbName" name="name" type="text" placeholder="Your name">
+          </div>
+
+          <div class="form-row">
+            <label for="fbDepartment">Department Concerned</label>
+            <input id="fbDepartment" name="department" type="text" required placeholder="e.g., Health Services">
+          </div>
+
+          <div class="form-row">
+            <label for="fbType">Type of Feedback</label>
+            <select id="fbType" name="type" required>
+              <option value="">-- Select --</option>
+              <option>Complaint</option>
+              <option>Suggestion</option>
+              <option>Compliment</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="fbText">Your Feedback</label>
+            <textarea id="fbText" name="feedback" rows="5" required maxlength="5000" placeholder="Share your feedback here..."></textarea>
+          </div>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <button class="btn" type="submit">Submit Feedback</button>
+            <a class="btn secondary" href="#jobs" role="button">Back to Jobs</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 County Government of Busia</p>
+      <p class="small">For production use: add server-side processing, HTTPS, validation, and security protections.</p>
+    </footer>
+  </div>
+</body>
+</html>
